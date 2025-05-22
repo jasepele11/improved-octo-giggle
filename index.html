@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Selamat Ulang Tahun!</title>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      background-color: #f8d5ec;
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 100px;
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
+
     h1 {
-      font-size: 48px;
-      color: #d63384;
+      z-index: 1;
+      position: absolute;
+      text-align: center;
+      font-size: 3em;
     }
-    p {
-      font-size: 20px;
-      color: #555;
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
     }
   </style>
 </head>
 <body>
-  <h1>Selamat Ulang Tahun!</h1>
-  <p>Semoga harimu penuh kebahagiaan dan kejutan menyenangkan!</p>
+
+  <h1>Happy Birthday!</h1>
+  <canvas id="confetti"></canvas>
+  
+  <script src="script.js"></script>
 </body>
 </html>
