@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.scene {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to top, #0c1445, #ff7e5f);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Matahari */
+.sun {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #ffd000, #ff9900);
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sunSet 20s infinite alternate;
+}
+
+@keyframes sunSet {
+  0% { top: 60px; }
+  100% { top: 300px; opacity: 0.6; }
+}
+
+/* Laut */
+.ocean {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  height: 200px;
+  background: #1e90ff;
+  animation: wave 4s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* Pasir */
+.sand {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: #f4c27b;
+}
+
+/* Burung */
+.bird {
+  width: 40px;
+  height: 20px;
+  border-top: 2px solid white;
+  border-radius: 100%;
+  position: absolute;
+  top: 100px;
+  left: -50px;
+  animation: fly 12s linear infinite;
+}
+
+.bird::after {
+  content: "";
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  left: 20px;
+  border-top: 2px solid white;
+  border-radius: 100%;
+}
+
+.bird.delay1 {
+  animation-delay: 3s;
+  top: 140px;
+}
+
+@keyframes fly {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(110vw); }
+}
+
+/* Login Box */
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 20px #000;
+}
+
+.login-box input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 200px;
+  border: none;
+  border-radius: 6px;
+}
+
+.login-box button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #00b894;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #019170;
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: yellow;
+}
