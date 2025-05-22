@@ -1,66 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Website Pribadi Saya</title>
-  <script>
-    // Meminta pengguna memasukkan password
-    var password = prompt("jalls:");
-    // Ganti dengan password kamu sendiri
-  
-    if (password !== "11181911") {
-      document.write("Ayo di ingat lagi!");
-      throw new Error;("Akses ditolak. Password salah!");
-    }
-  </script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 10px 15px 20px;
-    }
-
-    h1 {
-      color: #d81b60;
-    }
-
-    h2.animasi-teks {
-      color: #ff0055;
-      font-size: 24px;
-      animation: goyang 1s infinite alternate;
-    }
-
-    .gambar-itachi {
-      width: 250px;
-      margin-top: 20px;
-      animation: muncul 2s ease-in-out;
-    }
-
-    @keyframes goyang {
-      0%   { transform: rotate(-3deg); }
-      100% { transform: rotate(3deg); }
-    }
-
-    @keyframes muncul {
-      0%   { opacity: 0; transform: scale(0.5); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Pantai + Password</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Halo,!</h1>
-  <p>Ini adalah website pribadi !</p>
+  <div class="scene">
+    <div class="sun"></div>
+    <div class="ocean"></div>
+    <div class="sand"></div>
+    <div class="birds">
+      <div class="bird"></div>
+      <div class="bird delay1"></div>
+    </div>
 
-  <!-- Animasi teks -->
-  <h2 class="animasi-teks">Selamat datang di dunia Itachi</h2>
+    <div class="login-box">
+      <h2>Masukkan Password</h2>
+      <input type="password" id="password" placeholder="Password...">
+      <button onclick="checkPassword()">Masuk</button>
+      <p id="message"></p>
+    </div>
+  </div>
 
-  <!-- Gambar animasi Itachi -->
-  <img 
-    src="https://i.pinimg.com/originals/cc/f0/4f/ccf04d8a34f96c8f558f97cbb251d2e.gif" 
-    alt="Itachi Uchiha" 
-    class="gambar-itachi"
-  />
+  <script src="script.js"></script>
 </body>
 </html>
