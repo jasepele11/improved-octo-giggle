@@ -2,37 +2,65 @@
 <html>
 <head>
   <title>Website Pribadi Saya</title>
-<script>
-  // Meminta pengguna memasukkan password
-  var password = prompt("Nurfaizal");
+  <script>
+    // Meminta pengguna memasukkan password
+    var password = prompt("jalls:");
+    // Ganti dengan password kamu sendiri
+  
+    if (password !== "11181911") {
+      document.write("Ayo di ingat lagi!");
+      throw new Error;("Akses ditolak. Password salah!");
+    }
+  </script>
 
-  // Ganti "rahasia123" dengan password yang kamu inginkan
-  if (password !== "11181911") {
-    // Jika salah, tampilkan pesan dan hentikan halaman
-    document.write("Akses ditolak. Password salah!");
-    throw new Error("Dihentikan karena password salah");
-  }
-</script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color:black ;
-      color:white;
+      background-color: black;
+      color: white;
       text-align: center;
-      padding:10px 15px 20px;
+      padding: 10px 15px 20px;
     }
 
     h1 {
       color: #d81b60;
     }
 
-     {
-      font-size: 16px;
+    h2.animasi-teks {
+      color: #ff0055;
+      font-size: 24px;
+      animation: goyang 1s infinite alternate;
+    }
+
+    .gambar-itachi {
+      width: 250px;
+      margin-top: 20px;
+      animation: muncul 2s ease-in-out;
+    }
+
+    @keyframes goyang {
+      0%   { transform: rotate(-3deg); }
+      100% { transform: rotate(3deg); }
+    }
+
+    @keyframes muncul {
+      0%   { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
   <h1>Halo,!</h1>
   <p>Ini adalah website pribadi !</p>
+
+  <!-- Animasi teks -->
+  <h2 class="animasi-teks">Selamat datang di dunia Itachi</h2>
+
+  <!-- Gambar animasi Itachi -->
+  <img 
+    src="https://i.pinimg.com/originals/cc/f0/4f/ccf04d8a34f96c8f558f97cbb251d2e.gif" 
+    alt="Itachi Uchiha" 
+    class="gambar-itachi"
+  />
 </body>
 </html>
