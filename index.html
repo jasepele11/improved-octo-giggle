@@ -1,28 +1,51 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Pantai + Password</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Halaman Terkunci</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+    }
+
+    #passwordBox {
+      margin-top: 300px;
+    }
+
+    #content {
+      display: none;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-  <div class="scene">
-    <div class="sun"></div>
-    <div class="ocean"></div>
-    <div class="sand"></div>
-    <div class="birds">
-      <div class="bird"></div>
-      <div class="bird delay1"></div>
-    </div>
-
-    <div class="login-box">
-      <h2>Masukkan Password</h2>
-      <input type="password" id="password" placeholder="Password...">
-      <button onclick="checkPassword()">Masuk</button>
-      <p id="message"></p>
-    </div>
+  <div id="passwordBox">
+    <h2>Masukkan Password</h2>
+    <input type="password" id="passwordInput" />
+    <button onclick="checkPassword()">Masuk</button>
+    <p id="message"></p>
   </div>
 
-  <script src="script.js"></script>
+  <div id="content">
+    <h1>Selamat Datang!</h1>
+    <p>Ini adalah konten rahasia.</p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const correctPassword = "11181911";
+
+      if (input === correctPassword) {
+        document.getElementById("passwordBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        document.getElementById("message").innerText = "Password salah!";
+      }
+    }
+  </script>
 </body>
 </html>
